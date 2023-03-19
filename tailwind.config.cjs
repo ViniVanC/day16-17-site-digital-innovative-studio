@@ -3,8 +3,10 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      colors: {
-        
+      colors: {},
+      fontFamily: {
+        PlayFair: ["Playfair Display", "serif"],
+        SourceSans: ["Source Sans 3", "sans-serif"],
       },
     },
     screens: {
