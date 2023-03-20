@@ -1,5 +1,6 @@
 import { Header } from "./components/header/Header";
 import { Intro } from "./components/Intro";
+import { OurClient } from "./components/OurClient";
 import { OurWork } from "./components/OurWork";
 import { Webfolw } from "./components/Webfolw";
 import { WhatWeDo } from "./components/WhatWeDo";
@@ -12,6 +13,7 @@ function App() {
       <WhatWeDo />
       <OurWork />
       <Webfolw />
+      <OurClient />
     </>
   );
 }
