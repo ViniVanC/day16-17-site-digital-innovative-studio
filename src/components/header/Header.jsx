@@ -17,7 +17,7 @@ export const Header = () => {
         <div className="flex items-center justify-between py-[30px]">
           <div className="flex items-center gap-[15px]">
             <img
-              className="h-[23px] w-[70px]"
+              className="h-[23px] w-[70px] cursor-pointer"
               src="/images/logo.svg"
               alt="logo"
             />
@@ -28,7 +28,7 @@ export const Header = () => {
             </div>
           </div>
           <div className="flex items-center gap-[15px]">
-            <div className="flex items-center gap-[5px]">
+            <div className="flex cursor-pointer items-center gap-[5px]">
               <img src="/images/icons/cart.svg" alt="cart" />
               <span className="flex h-[22px] min-w-[22px] items-center justify-center bg-yellow p-[5px] text-[12px] leading-[18px] text-darkGreen">
                 0
