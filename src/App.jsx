@@ -1,3 +1,4 @@
+import { Footer } from "./components/Footer";
 import { Header } from "./components/header/Header";
 import { Intro } from "./components/Intro";
 import { OurClient } from "./components/OurClient";
@@ -16,6 +17,7 @@ function App() {
       <Webfolw />
       <OurClient />
       <OurVision />
+      <Footer />
     </>
   );
 }
