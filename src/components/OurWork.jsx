@@ -20,7 +20,7 @@ const OurWorkItem = ({ text }) => {
 
 export const OurWork = () => {
   return (
-    <section>
+    <section id="ourwork">
       <Container>
         <div className="mb-[100px] flex items-center justify-between uppercase">
           <h2 className="text-[50px]  leading-[105%] max-sm:text-[30px]">

@@ -16,7 +16,7 @@ export const Intro = () => {
   const isAbove768Screens = useMediaQuery("(min-width:768px)");
 
   return (
-    <section className="mt-[100px]">
+    <section id="intro" className="mt-[100px]">
       <Container>
         {isAbove768Screens ? (
           <div className="">

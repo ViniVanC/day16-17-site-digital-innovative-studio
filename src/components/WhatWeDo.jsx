@@ -39,7 +39,7 @@ const Item = ({ num, title, description }) => {
 
 export const WhatWeDo = () => {
   return (
-    <section>
+    <section id="what-we-do">
       <Container>
         <div className="flex flex-wrap-reverse items-center justify-center gap-[100px]">
           <ImageAndText
