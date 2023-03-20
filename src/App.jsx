@@ -1,5 +1,5 @@
 import { Header } from "./components/header/Header";
-import { Intro } from "./components/intro/Intro";
+import { Intro } from "./components/Intro";
 
 function App() {
   return (
