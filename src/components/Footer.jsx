@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { Container } from "./Container";
 
@@ -9,13 +10,33 @@ export const Footer = () => {
     <footer className="bg-white pt-[117px] pb-[60px] text-darkGreen">
       <Container>
         <div className="mb-[100px] flex flex-col items-center justify-center gap-[60px]">
-          <h2 className="text-center text-[80px] uppercase leading-[100%] max-sm:text-[50px] max-xs:text-[35px]">
+          <motion.h2
+            className="text-center text-[80px] uppercase leading-[100%] max-sm:text-[50px] max-xs:text-[35px]"
+            initial="hidden"
+            whileInView={"visible"}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, x: -50 },
+              visible: { opacity: 1, x: 0 },
+            }}
+          >
             FEEL FREE TO WRITE US. <br /> Ready to talk
-          </h2>
-          <div className="flex items-center gap-[30px]">
+          </motion.h2>
+          <motion.div
+            className="flex items-center gap-[30px]"
+            initial="hidden"
+            whileInView={"visible"}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1 },
+            }}
+          >
             <button className="btn">Contact Us</button>
             <a href="#">make a call</a>
-          </div>
+          </motion.div>
         </div>
         <div className="flex flex-wrap gap-y-[50px]">
           <div className="w-1/3 min-w-[300px] px-[25px]">

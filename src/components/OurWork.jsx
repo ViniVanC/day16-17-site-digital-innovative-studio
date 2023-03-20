@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { Container } from "./Container";
 
@@ -10,11 +11,21 @@ const itemsList = [
   { text: "Cras ultricies" },
 ];
 
-const OurWorkItem = ({ text }) => {
+const OurWorkItem = ({ num, text }) => {
   return (
-    <li className="flex cursor-pointer items-center gap-[20px] whitespace-nowrap text-[86px] leading-[120%] before:relative  before:inline-block before:h-[4px] before:w-0 before:w-0 before:scale-[-1] before:bg-white before:transition-all before:duration-700 max-sm:text-[40px] max-xs:text-[35px] sm:hover:before:w-full">
+    <motion.li
+      className="flex cursor-pointer items-center gap-[20px] whitespace-nowrap text-[86px] leading-[120%] before:relative  before:inline-block before:h-[4px] before:w-0 before:w-0 before:scale-[-1] before:bg-white before:transition-all before:duration-700 max-sm:text-[40px] max-xs:text-[35px] sm:hover:before:w-full"
+      initial="hidden"
+      whileInView={"visible"}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ delay: `.${num + 1}`, duration: 0.5 }}
+      variants={{
+        hidden: { opacity: 0, x: -50 },
+        visible: { opacity: 1, x: 0 },
+      }}
+    >
       {text}
-    </li>
+    </motion.li>
   );
 };
 
@@ -23,16 +34,37 @@ export const OurWork = () => {
     <section id="ourwork">
       <Container>
         <div className="mb-[100px] flex items-center justify-between uppercase">
-          <h2 className="text-[50px]  leading-[105%] max-sm:text-[30px]">
+          <motion.h2
+            className="text-[50px]  leading-[105%] max-sm:text-[30px]"
+            initial="hidden"
+            whileInView={"visible"}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, x: -50 },
+              visible: { opacity: 1, x: 0 },
+            }}
+          >
             Our Work
-          </h2>
-          <a className="" href="#">
+          </motion.h2>
+          <motion.a
+            className=""
+            href="#"
+            initial="hidden"
+            whileInView={"visible"}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, x: 50 },
+              visible: { opacity: 1, x: 0 },
+            }}
+          >
             Work with us
-          </a>
+          </motion.a>
         </div>
         <ul className="flex flex-col gap-[30px]">
           {itemsList.map((item, i) => (
-            <OurWorkItem key={i} text={item.text} />
+            <OurWorkItem key={i} num={i} text={item.text} />
           ))}
         </ul>
       </Container>

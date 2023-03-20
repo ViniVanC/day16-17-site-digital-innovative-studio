@@ -1,12 +1,23 @@
 import React from "react";
 import { Container } from "./Container";
 import useMediaQuery from "../hooks/useMediaQuery";
+import { motion } from "framer-motion";
 
 const Title = ({ children }) => {
   return (
-    <div className="max-[533px]:text text-[173px] uppercase leading-[100%] max-md:text-[130px] max-sm:mb-[30px] max-sm:text-[100px] max-sm:leading-[120%] max-[550px]:text-[50px]">
+    <motion.div
+      className="max-[533px]:text text-[173px] uppercase leading-[100%] max-md:text-[130px] max-sm:mb-[30px] max-sm:text-[100px] max-sm:leading-[120%] max-[550px]:text-[50px]"
+      initial="hidden"
+      whileInView={"visible"}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.5 }}
+      variants={{
+        hidden: { opacity: 0, x: -50 },
+        visible: { opacity: 1, x: 0 },
+      }}
+    >
       {children}
-    </div>
+    </motion.div>
   );
 };
 
@@ -20,21 +31,49 @@ export const Intro = ({ scrollToNextSection }) => {
           <div className="">
             <div className="flex items-end gap-[80px] py-[30px] max-md:gap-[40px]">
               <Title>Digital</Title>
-              <p className="mb-[30px] text-[22px] uppercase leading-[120%] text-grey">
+              <motion.p
+                className="mb-[30px] text-[22px] uppercase leading-[120%] text-grey"
+                initial="hidden"
+                whileInView={"visible"}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                variants={{
+                  hidden: { opacity: 0, x: -50 },
+                  visible: { opacity: 1, x: 0 },
+                }}
+              >
                 We are an award-winning branding{" "}
                 <span className="font-PlayFair text-yellow">&</span> web studio
                 committed to excellence since forever.
-              </p>
+              </motion.p>
             </div>
             <div className="flex items-center justify-center gap-[80px] py-[30px] max-md:gap-[40px]">
               <Title>Innovative</Title>
-              <button className="relative flex h-[100px] w-[100px] items-center justify-center bg-yellow max-md:h-[70px] max-md:w-[70px] max-sm:hidden">
+              <motion.button
+                className="relative flex h-[100px] w-[100px] items-center justify-center bg-yellow max-md:h-[70px] max-md:w-[70px] max-sm:hidden"
+                initial="hidden"
+                whileInView={"visible"}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                variants={{
+                  hidden: { opacity: 0, x: -50 },
+                  visible: { opacity: 1, x: 0 },
+                }}
+              >
                 <img src="/images/icons/arrow1.svg" alt="arrow" />
-              </button>
+              </motion.button>
             </div>
             <div className="relative flex items-end justify-end gap-[80px] py-[30px] max-md:gap-[40px]">
-              <button
+              <motion.button
                 className="relative flex h-[127px] w-[127px] items-center justify-center"
+                initial="hidden"
+                whileInView={"visible"}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: { opacity: 1 },
+                }}
                 onClick={scrollToNextSection}
               >
                 <img src="/images/icons/arrow.svg" alt="arrow" />
@@ -43,18 +82,30 @@ export const Intro = ({ scrollToNextSection }) => {
                   src="/images/icons/circularText.svg"
                   alt="circular text"
                 />
-              </button>
+              </motion.button>
               <Title>Studio</Title>
             </div>
           </div>
         ) : (
           <div className="">
-            <Title>Digital Innovative Studio</Title>
-            <p className="mb-[30px] text-[22px] uppercase leading-[120%] text-grey">
+            <Title>Digital</Title>
+            <Title>Innovative</Title>
+            <Title>Studio</Title>
+            <motion.p
+              className="mb-[30px] text-[22px] uppercase leading-[120%] text-grey"
+              initial="hidden"
+              whileInView={"visible"}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              variants={{
+                hidden: { opacity: 0, x: -50 },
+                visible: { opacity: 1, x: 0 },
+              }}
+            >
               We are an award-winning branding{" "}
               <span className="font-PlayFair text-yellow">&</span> web studio
               committed to excellence since forever.
-            </p>
+            </motion.p>
             <div className="relative flex items-end justify-center gap-[80px] py-[30px] max-md:gap-[40px]">
               <button
                 className="relative flex h-[90px] w-[90px] items-center justify-center"
