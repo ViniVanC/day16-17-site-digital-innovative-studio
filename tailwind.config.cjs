@@ -14,6 +14,15 @@ module.exports = {
         PlayFair: ["Playfair Display", "serif"],
         SourceSans: ["Source Sans 3", "sans-serif"],
       },
+      animation: {
+        spinCircularText: "spinCircularText 20s linear infinite",
+      },
+      keyframes: {
+        spinCircularText: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+      },
     },
     screens: {
       xs: "480px",
