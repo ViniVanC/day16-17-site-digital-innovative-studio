@@ -109,3 +109,23 @@ a {
     }
   }
 }
+
+.btn {
+  padding: 14px 23px;
+  border-radius: 4px;
+  background-color: #4a524a;
+  font-size: 16px;
+  line-height: 125%;
+  color: #ffffff;
+  transition: all 0.3s;
+
+  @media (min-width: 768px) {
+    &:hover {
+      background-color: lighten($color: #4a524a, $amount: 10);
+    }
+  }
+
+  &:active {
+    scale: 0.9;
+  }
+}
