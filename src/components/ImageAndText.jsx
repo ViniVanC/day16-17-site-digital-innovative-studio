@@ -2,7 +2,7 @@ import React from "react";
 
 export const ImageAndText = ({ text, src, alt }) => {
   return (
-    <div className="relative z-0 flex h-[627px] w-max items-center">
+    <div className="relative z-0 flex h-[627px] w-max items-center max-sm:hidden">
       <span className="relative z-[2]  whitespace-nowrap text-[100px] uppercase leading-[74px] tracking-[1px] text-yellow">
         {text}
       </span>
