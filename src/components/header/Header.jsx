@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useReducer } from "react";
 import { Container } from "../Container";
+import { Navbar } from "./Navbar";
 
 export const Header = () => {
+  const [openNavbar, setOpenNavbar] = useReducer((open) => !open, false);
+
+  if (openNavbar) {
+    document.body.classList.add("lock");
+  } else {
+    document.body.classList.remove("lock");
+  }
+
   return (
     <header className="fixed top-0 left-0 w-full border-b-2 border-b-grey/10">
       <Container>
@@ -12,8 +21,8 @@ export const Header = () => {
               src="/images/logo.svg"
               alt="logo"
             />
-            <div className="h-[15px] w-[1px] bg-greyGreen" />
-            <div className="flex gap-[5px] text-[13px] uppercase leading-5 tracking-[1px]">
+            <div className="h-[15px] w-[1px] bg-greyGreen max-sm:hidden" />
+            <div className="flex gap-[5px] text-[13px] uppercase leading-5 tracking-[1px] max-sm:hidden">
               <span className="text-white/50">Enquire Us:</span>
               <a href="#">Hello@aron.com</a>
             </div>
@@ -25,9 +34,13 @@ export const Header = () => {
                 0
               </span>
             </div>
-            <div className="menu-icon"></div>
+            <div
+              className={`menu-icon ${openNavbar ? "open" : ""}`}
+              onClick={setOpenNavbar}
+            ></div>
           </div>
         </div>
+        <Navbar openNavbar={openNavbar} />
       </Container>
     </header>
   );
