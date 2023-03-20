@@ -4,7 +4,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 
 const Title = ({ children }) => {
   return (
-    <div className="max-[533px]:text text-[173px] uppercase leading-[100%] max-md:text-[130px] max-sm:mb-[30px] max-sm:text-[100px] max-sm:leading-[120%]">
+    <div className="max-[533px]:text text-[173px] uppercase leading-[100%] max-md:text-[130px] max-sm:mb-[30px] max-sm:text-[100px] max-sm:leading-[120%] max-[550px]:text-[50px]">
       {children}
     </div>
   );
