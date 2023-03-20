@@ -37,9 +37,9 @@ const Item = ({ num, title, description }) => {
   );
 };
 
-export const WhatWeDo = () => {
+export const WhatWeDo = ({ WhatWeDoRef }) => {
   return (
-    <section id="what-we-do">
+    <section ref={WhatWeDoRef} id="what-we-do">
       <Container>
         <div className="flex flex-wrap-reverse items-center justify-center gap-[100px]">
           <ImageAndText

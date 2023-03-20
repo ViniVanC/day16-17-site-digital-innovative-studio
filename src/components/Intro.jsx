@@ -10,9 +10,7 @@ const Title = ({ children }) => {
   );
 };
 
-function scrollToNextSection() {}
-
-export const Intro = () => {
+export const Intro = ({ scrollToNextSection }) => {
   const isAbove768Screens = useMediaQuery("(min-width:768px)");
 
   return (
