@@ -38,9 +38,20 @@ const usersReviewsList = [
   },
 ];
 
-const ReviewsItem = ({ text, avatarSrc, author, authorInfo, stars }) => {
+const ReviewsItem = ({ num, text, avatarSrc, author, authorInfo, stars }) => {
   return (
-    <>
+    <motion.div
+      className="
+    flex min-h-[320px] w-full max-w-[460px] flex-col gap-[35px] border border-solid border-[rgba(111,119,111,.44)] py-[40px] pl-[47px] pr-[70px]"
+      initial="hidden"
+      whileInView={"visible"}
+      viewport={{ once: true, amount: 0 }}
+      transition={{ delay: `.${num + 1}`, duration: 0.5 }}
+      variants={{
+        hidden: { opacity: 0, y: -50 },
+        visible: { opacity: 1, y: 0 },
+      }}
+    >
       <ul className="flex items-center gap-[5px]">
         {new Array(stars).fill().map((item, i) => (
           <li key={i}>
@@ -60,7 +71,7 @@ const ReviewsItem = ({ text, avatarSrc, author, authorInfo, stars }) => {
           alt={`${author}-avatar`}
         />
       </div>
-    </>
+    </motion.div>
   );
 };
 
@@ -83,7 +94,17 @@ export const Reviews = () => {
             What they think
           </motion.h2>
 
-          <div className="flex items-center gap-[10px]">
+          <motion.div
+            className="flex items-center gap-[10px]"
+            initial="hidden"
+            whileInView={"visible"}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1 },
+            }}
+          >
             <button
               id="prevBtn"
               className="flex h-[50px] w-[50px] items-center justify-center border border-solid border-[#6F776F] transition duration-300"
@@ -107,7 +128,7 @@ export const Reviews = () => {
                 alt="arrow-next"
               />
             </button>
-          </div>
+          </motion.div>
         </div>
       </Container>
       <Swiper
@@ -134,11 +155,9 @@ export const Reviews = () => {
         }}
       >
         {usersReviewsList.map((item, i) => (
-          <SwiperSlide
-            key={i}
-            className="flex min-h-[320px] w-full max-w-[460px] flex-col gap-[35px] border border-solid border-[rgba(111,119,111,.44)] py-[40px] pl-[47px] pr-[70px]"
-          >
+          <SwiperSlide key={i} className="min-h-[320px] w-full max-w-[460px]">
             <ReviewsItem
+              num={i}
               text={item.text}
               avatarSrc={item.avatarSrc}
               author={item.author}
