@@ -26,7 +26,17 @@ const blogItemList = [
 
 const BlogCard = ({ num, imgSrc, tag, title, href }) => {
   return (
-    <motion.div className="w-full max-w-[373px] overflow-hidden rounded bg-greyGreen">
+    <motion.div
+      className="w-full max-w-[373px] overflow-hidden rounded bg-greyGreen"
+      initial="hidden"
+      whileInView={"visible"}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ delay: `.${num + 1}`, duration: 0.5 }}
+      variants={{
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0 },
+      }}
+    >
       <img className="object-cover" src={imgSrc} alt={title} />
       <div className="p-[30px]">
         <span
