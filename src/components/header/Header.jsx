@@ -14,7 +14,7 @@ export const Header = () => {
   return (
     <header className="fixed top-0 left-0 z-50 w-full border-b-2 border-b-grey/10 bg-darkGreen">
       <Container>
-        <div className="flex items-center justify-between py-[30px]">
+        <div className="flex items-center justify-between py-[30px] max-sm:py-[15px]">
           <div className="flex items-center gap-[15px]">
             <img
               className="h-[23px] w-[70px] cursor-pointer"

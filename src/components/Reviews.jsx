@@ -2,9 +2,10 @@ import { motion } from "framer-motion";
 import React from "react";
 import { Container } from "./Container";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
+import { Navigation, Pagination } from "swiper";
 
 import "swiper/css";
+import "swiper/css/pagination";
 
 const usersReviewsList = [
   {
@@ -110,13 +111,26 @@ export const Reviews = () => {
         </div>
       </Container>
       <Swiper
-        modules={[Navigation]}
-        slidesPerView={4}
-        spaceBetween={40}
+        modules={[Navigation, Pagination]}
         centeredSlides={true}
         navigation={{
           prevEl: "#prevBtn",
           nextEl: "#nextBtn",
+        }}
+        pagination
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
         }}
       >
         {usersReviewsList.map((item, i) => (
