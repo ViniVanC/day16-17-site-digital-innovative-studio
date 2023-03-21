@@ -5,6 +5,7 @@ import { Intro } from "./components/Intro";
 import { OurClient } from "./components/OurClient";
 import { OurVision } from "./components/OurVision";
 import { OurWork } from "./components/OurWork";
+import { Reviews } from "./components/Reviews";
 import { Webfolw } from "./components/Webfolw";
 import { WhatWeDo } from "./components/WhatWeDo";
 
@@ -23,6 +24,7 @@ function App() {
       <OurWork />
       <Webfolw />
       <OurClient />
+      <Reviews />
       <OurVision />
       <Footer />
     </>

@@ -36,6 +36,10 @@ body {
   }
 }
 
+*:disabled {
+  opacity: 0.5;
+}
+
 section {
   padding: 100px 0;
 
