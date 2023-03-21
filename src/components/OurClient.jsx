@@ -22,14 +22,7 @@ const Sponsor = ({ num }) => {
 };
 
 export const OurClient = () => {
-  const sponsorsList = [
-    { num: 1 },
-    { num: 2 },
-    { num: 3 },
-    { num: 4 },
-    { num: 5 },
-    { num: 6 },
-  ];
+
   return (
     <section id="our-client">
       <Container>
@@ -49,8 +42,8 @@ export const OurClient = () => {
               We worked with the world's biggest brands.
             </motion.h2>
             <ul className="mb-[50px] flex flex-wrap items-center justify-center gap-[40px]">
-              {sponsorsList.map((item, i) => (
-                <Sponsor key={i} num={item.num} />
+              {new Array(6).fill().map((item, i) => (
+                <Sponsor key={i} num={i + 1} />
               ))}
             </ul>
             <motion.button
