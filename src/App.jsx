@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/header/Header";
 import { Intro } from "./components/Intro";
+import { OurBlog } from "./components/OurBlog";
 import { OurClient } from "./components/OurClient";
 import { OurVision } from "./components/OurVision";
 import { OurWork } from "./components/OurWork";
@@ -26,6 +27,7 @@ function App() {
       <OurClient />
       <Reviews />
       <OurVision />
+      <OurBlog />
       <Footer />
     </>
   );
